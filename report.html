@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Civil Merits</title>
+	<link href="css/add.css" rel="stylesheet">
+	<script src="js/add.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<link href="css/style.css" rel="stylesheet">
+    <!-- =======================================================
+        Theme Name: MeFamily
+        Theme URL: https://bootstrapmade.com/family-multipurpose-html-bootstrap-template-free/
+        Author: BootstrapMade
+        Author URL: https://bootstrapmade.com
+    ======================================================= -->
+	
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+     var map;
+      var infowindow;
+
+     function initMap() {
+        
+
+       map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 40.7148540, lng: -74.0144970},
+          zoom: 15
+        });
+
+       infowindow = new google.maps.InfoWindow();
+
+       var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: map.center,
+          radius: 1000,
+          type: ['police']
+        }, callback);
+      }
+
+	if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+           infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+    
+
+     function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+     function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+
+
+       google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+    </script>
+  
+
+  </head>
+
+
+  <body>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"><img class="img-responsive2 pull-left" src="images/imagecivil.png"><span>Civil Merits</span></a>
+			</div>
+			<div class="navbar-collapse collapse">							
+				<div class="menu">
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation"  class="active"><a href="index.html">Home</a></li>
+						<li role="presentation"><a href="rights.html">Rights</a></li>
+						<li role="presentation"><a href="report.html">Report</a></li>
+						<li role="presentation"><a href="record.html">Record</a></li>
+						<li role="presentation"><a href="forum.html">Forum</a><li>
+						<li class="dropdown">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">About <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li>
+									<li><a href="history.html">History</a></li>
+									<li><a href="sources.html">Sources</a></li>
+									<li><a href="future-plans.html">Future Plans</a></li>
+									<li class="divider"></li>
+									<li class="nav-header">Developers</li>
+									<li><a href="contact-us.html">Contact Us</a></li>
+									<li><a href="about-us.html">About Us</a></li>
+								</li>
+						</li>	
+
+						
+    				</ul>
+
+					</ul>
+				</div>
+			</div>			
+		</div>
+	</nav>
+	
+	<div class="breadcrumb">
+		<h2>Report</h2>
+		<div class="alert alert-warning alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Alert!</strong> This is meant to educate the public and not provide legal advice. </div>
+		<div class="alert alert-warning alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Alert!</strong> The sources for all information on this website can be found on our sources section located in the about section. </div>
+	</div>
+		
+	<div>
+		<h3>Reporting an Incident</h3>
+
+		<p><b>If You/or someone is in immediate danger</b> (from a law enforcement officer) do not hesitate to call 911.|Even if you are in a situation with a dangerous situation with a law enforcement officer, it is still the duty of all law enforcement to protect the rights of everyone regardless of color. Not only does calling 911 have potential to save someone’s life depending on the situation it helps make the system better by alerting the officer’s seniors who will hopefully address the situation.</p>
+		<p><b>If You believe your rights have been violated</b> follow the steps below to report an incident.</p>
+
+		<div class="Step 1">
+			<h4><b>1.</b> Police Misconduct</h4>
+			
+			<div>
+
+			
+
+			<ul>
+				<p>Common examples of police misconduct includes:
+				<li class="presentation">Excessive/unnecessary force</li>
+				<li class="presentation">Offensive language</li>
+				<li class="presentation"><a href="#">Inappropiate stop and frisk</a></li>
+				<li class="presentation">Sexual Assualt</li>
+			</ul>
+
+			</div>
+
+		</div>
+
+		<div class="Step2">
+			<h4><b>2.</b> Document Everything</h4>
+			
+			<ul>
+				<li class="presentation">Write down every detail that you remember about the encounter. Even if you do not thing that it is important still write it down because you never know what can be used in your defense/case. Try to replay the events slowly in your head to remember as many details as possible. Try to be as specific as possible and quote as close to the exact words spoken. </li>
+				<li class="presentation">If there were witnesses present, try to get their contact information including their name, phone number, and any other additional information that may help you get in touch.</li>
+				<li class="presentation">Even if you do not obtain the officer(s) badge number, try to write down a description of the officer as badge numbers can always be obtained based off descriptions.</li>
+				<li class="presentation">The sooner you start documenting, the better you will remember details and the stronger your argument will be. Law enforcement misconduct can be very traumatizing which can lead to memory problems or inaccuracies.</li>
+			</ul>
+		</div>
+
+		<div class="Step 3">
+			<h4><b>3.</b> Filing a report</h4> 
+
+			<ul>
+				<li class="presentation">If you are trying to sue or if you are not charged with a crime, proceed to file. If you try to sue after you filed a report.</li>
+				<li class="presentation">Find your local citizen review board and file the necessary papers.</li>
+				<li class="presentation">Locate your local police department internal affairs department and file the necessary papers.</li>
+				<li class="presentation">If filing a report requires mailing it in, send the form by certified mail. If the form is only obtainable by going to the station in person, <B>DO NOT DISCUSS THE COMPLAINT WITH ANYONE</B> as officers may harass you or tip off the officer in question.</li>
+				<li class="presentation">It is important to note that filing a report does not guarantee a speedy process or guarantee an official investigation.<li>
+			</ul>
+
+		</div>
+	
+		<div class="Step 4">
+			
+		</div>
+	</div>
+
+	<html>
+  
+  
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkNEsV4S5Uu8b-NxUygDywcscUCYv1zH8&libraries=places&callback=initMap" async defer></script>
+ 
+
+	<!--<div class="events">
+		<div class="container">
+			<div class="col-md-4">
+				<div class="slider">
+					<div class="img-responsive">
+						<ul class="bxslider">				
+							<li><img src="img/1.jpg" alt=""/></li>								
+							<li><img src="img/2.jpg" alt=""/></li>	
+							<li><img src="img/3.jpg" alt=""/></li>			
+						</ul>
+					</div>	
+				</div>
+			</div>
+			<div class="col-md-8">
+				<h2>Jessa's 5th Birthday</h2>
+				Sunday, September 26th at 7:00 pm
+				<p>
+				praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+				excepturi sint Voluptatem accusantium doloremque laudantium sprea totam rem aperiam
+				praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+				excepturi sint Voluptatem accusantium doloremque laudantium sprea totam rem aperiam
+				<br>			
+				praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+				excepturi sint Voluptatem accusantium doloremque laudantium sprea totam rem aperiam
+				praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+				excepturi sint Voluptatem accusantium doloremque laudantium sprea totam rem aperiam
+				</p>		
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="col-md-4">
+				<div class="slider">
+					<div class="img-responsive">
+						<ul class="bxslider">				
+							<li><img src="img/3.jpg" alt=""/></li>								
+							<li><img src="img/2.jpg" alt=""/></li>	
+							<li><img src="img/1.jpg" alt=""/></li>			
+						</ul>
+					</div>	
+				</div>
+			</div>
+			<div class="col-md-8">
+				<h2>Jessica's 5th Birthday</h2>
+				Sunday, September 26th at 7:00 pm
+				<p>
+				praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+				excepturi sint Voluptatem accusantium doloremque laudantium sprea totam rem aperiam
+				praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+				excepturi sint Voluptatem accusantium doloremque laudantium sprea totam rem aperiam
+				<br>			
+				praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+				excepturi sint Voluptatem accusantium doloremque laudantium sprea totam rem aperiam
+				praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+				excepturi sint Voluptatem accusantium doloremque laudantium sprea totam rem aperiam
+				</p>
+			</div>
+		</div>
+		<div class="jessa">
+			<div class="container">
+				<div class="col-md-4">
+					<div class="slider">
+						<div class="img-responsive">
+							<ul class="bxslider">				
+								<li><img src="img/2.jpg" alt=""/></li>								
+								<li><img src="img/3.jpg" alt=""/></li>	
+								<li><img src="img/1.jpg" alt=""/></li>			
+							</ul>
+						</div>	
+					</div>
+				</div>				
+				<div class="col-md-8">
+					<h2>James 5th Birthday</h2>
+					Sunday, September 26th at 7:00 pm
+					<p>
+					praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+					excepturi sint Voluptatem accusantium doloremque laudantium sprea totam rem aperiam
+					praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+					excepturi sint Voluptatem accusantium doloremque laudantium sprea totam rem aperiam
+					<br>			
+					praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+					excepturi sint Voluptatem accusantium doloremque laudantium sprea totam rem aperiam
+					praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+					excepturi sint Voluptatem accusantium doloremque laudantium sprea totam rem aperiam
+					</p>
+				</div>				
+			</div>	
+		</div>
+	</div>-->	
+	
+	<footer>
+		<div class="inner-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 f-about">
+						<a href="index.html"><h1>Civil Merits</h1></a>
+						<p>Gastropub vexillologist asymmetrical ethical. Enamel pin farm-to-table bicycle rights ugh brunch biodiesel meggings beard master cleanse slow-carb iPhone cardigan.</p>						
+					</div>
+					
+					<div class="col-md-4 l-posts">
+						<h3 class="widgetheading">Quick Links</h3>
+						<ul>
+							<li><a href="rights.html">Learn</a></li>
+							<li><a href="report.html">Report</a></li>
+							<li><a href="record.html">Record</a></li>
+							<li><a href="forum.html">Forum</a></li>
+							<li><a href="about.html">ABOUT</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 f-contact">
+						<h3 class="widgetheading">Contact the developers</h3>
+						<a href="#"><p><i class="fa fa-envelope"></i> example@gmail.com</p></a>
+						<p><i class="fa fa-phone"></i>  +Input Phone Number</p>
+						<p><i class="fa fa-home"></i> Civil Merits  |  Input Address 
+							Input Address Here</p>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		<div class="last-div">
+			<div class="container">
+				<div class="row">					
+					<div class="copyright">
+						&copy; 2017 Civil Merits
+                        <div class="credits">
+                            <!-- 
+                                All the links in the footer should remain intact. 
+                                You can delete the links only if you purchased the pro version.
+                                Licensing information: https://bootstrapmade.com/license/
+                                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=MeFamily
+                            -->
+                            <a href="https://bootstrapmade.com/">Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        </div>
+					</div>					
+				
+		
+					<ul class="social-network">
+						<li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
+						<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
+						<li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin fa-1x"></i></a></li>
+						<li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest fa-1x"></i></a></li>
+						<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus fa-1x"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>		
+	</footer>
+	
+	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.bxslider.min.js"></script>
+	<script src="js/jquery.isotope.min.js"></script>
+	<script src="js/fancybox/jquery.fancybox.pack.js"></script>
+	<script src="js/functions.js"></script>
+	<script>wow = new WOW({}).init();</script>
+    
+</body>
+</html>

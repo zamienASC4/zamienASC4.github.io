@@ -1,0 +1,20 @@
+@media (min-width: 768px) {
+    .dropdown-menu li:hover .sub-menu {
+        visibility: visible;
+        }
+} 
+and @media (min-width: 768px) {
+    .dropdown:hover .dropdown-menu {
+        display: block}};
+
+
+.cheat-sheet{
+    padding: 0 100px;
+    margin: 0 auto;
+}
+
+.basic{
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
