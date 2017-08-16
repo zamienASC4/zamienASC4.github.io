@@ -24,7 +24,8 @@
         Author URL: https://bootstrapmade.com
     ======================================================= -->
   </head>
-  <body>
+
+<body>
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -68,30 +69,25 @@
 		</div>
 	</nav>
 	
-<div id="container">
-<div style = "text-align:center;">
-	<h1>Media Recorder API Demo </h1>
-	<h2>Record a 640x480 video using the media recorder API implemented in Firefox and Chrome</h2>
-	<video controls autoplay></video><br>
-	<button id="rec" onclick="onBtnRecordClicked()">Record</button>
-	<button id="pauseRes"   onclick="onPauseResumeClicked()" disabled>Pause</button>
-	<button id="stop"  onclick="onBtnStopClicked()" disabled>Stop</button>
- </div>
-<a id="downloadLink" download="mediarecorder.webm" name="mediarecorder.webm" href></a>
-<p id="data"></p>
+	<div id="container">
+	<div style = "text-align:center;">
+		<video controls autoplay></video><br>
+		<button id="rec" onclick="onBtnRecordClicked()">Record</button>
+		<button id="pauseRes"   onclick="onPauseResumeClicked()" disabled>Pause</button>
+		<button id="stop"  onclick="onBtnStopClicked()" disabled>Stop</button>
+	</div>
+	<a id="downloadLink" download="mediarecorder.webm" name="mediarecorder.webm" href></a>
+	<p id="data"></p>
 
   <div id="container">
 
     <div class="highlight">
 
-    <h1><a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">WebRTC samples</a> <span>getUserMedia</span></h1>
-
     <video id="gum-local" autoplay></video>
 
     <div id="errorMsg"></div>
   </div>
-	
-	
+
 	<footer>
 		<div class="inner-footer">
 			<div class="container">
