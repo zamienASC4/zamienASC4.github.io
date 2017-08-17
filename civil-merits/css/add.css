@@ -33,3 +33,42 @@
 .instructions {
     color: black;
 }
+
+.cont {
+    margin-top: 100px;
+}
+
+.quick{
+    font-size: 35px;
+}
+
+.depth{
+    font-size: 35px;
+}
+
+.jumbotron{
+    padding: 35px;
+    border: black solid 15px;
+}
+
+.basic-responsibilities{
+    font-size: 20px;
+}
+
+.resp{
+    font-size: 40px;
+}
+
+.down{
+    font: black solid;
+    font-size: 32px;
+}
+
+.info{
+    font-size: 15px;
+    font-family; 'Times New Roman', Times, serif;
+}
+
+.instructions p{
+    font-size: 15px;
+}
