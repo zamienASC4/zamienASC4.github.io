@@ -72,3 +72,18 @@
 .instructions p{
     font-size: 15px;
 }
+
+.coming-soon {
+    text-align: center;
+    font-size: 75px;
+}
+
+.stay-tuned {
+    text-align: center;
+    font-size: 50px;
+}
+
+.something {
+    padding: 50px;
+    text-align: center;
+}
