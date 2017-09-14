@@ -66,7 +66,7 @@
 
 .info{
     font-size: 15px;
-    font-family; 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .instructions p{
@@ -86,4 +86,9 @@
 .something {
     padding: 50px;
     text-align: center;
+}
+
+.letters {
+    justify-content: center;
+    
 }
